@@ -29,16 +29,6 @@ This project requires IsaacLab and Isaac Sim.
 
 Please make sure IsaacLab is correctly installed and the official G1 tasks can run before using this project.
 
-Main dependencies:
-
-* Python
-* PyTorch
-* IsaacLab
-* Isaac Sim
-* NumPy
-* PyYAML
-* TensorBoard
-
 ## Training
 
 Train the velocity tracking task:

@@ -1,0 +1,43 @@
+task: Isaac-Velocity-Flat-G1-v0
+device: cuda:0
+alg_name: ppo
+seed: 42
+debug: true
+use_fabric: true
+
+obs_dim: 123      
+action_dim: 37    
+
+total_iterations: 5000
+num_envs: 4096
+rollout_steps: 128
+max_episode_steps: 1000
+
+batch_size: 256
+ppo_epochs: 5
+
+gamma: 0.99
+lam: 0.95
+
+value_loss_coef: 1.0
+entropy_coef: 0.005
+max_grad_norm: 1.0
+
+policy_lr: 3.0e-4
+value_lr: 1.0e-3
+
+policy_weight_decay: 0.0
+value_weight_decay: 0.0
+
+policy_hidden_dims: [512, 256, 128]
+policy_activations: [elu, elu, elu]
+policy_output_activation: tanh
+
+policy_sample_std: 0.6
+value_hidden_dims: [512, 256, 128]
+value_activations: [elu, elu, elu]
+value_output_activation: identity
+
+output_dir: ./outputs
+load_model_dir: null
+save_interval: 100

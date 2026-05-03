@@ -1,0 +1,21 @@
+task: G1Goal-v0
+device: cuda:0
+alg_name: ppo_play
+seed: 0
+use_fabric: true
+
+obs_dim: 124
+action_dim: 37
+num_envs: 4
+max_episode_steps: 2000
+
+load_model_dir: ./outputs/G1Goal-v0_PPO/2026-05-03/17-37-01/model/_reward32.3_399
+# load_model_dir: ./outputs/G1Goal-v0_PPO/2026-05-03/16-02-59/model/_reward31.9_449 # --- 备选 ---
+policy_hidden_dims: [512, 256, 128]
+policy_activations: [elu, elu, elu]
+policy_output_activation: tanh
+
+play_steps: -1        
+deterministic: true
+render: true
+log_interval: 1000
